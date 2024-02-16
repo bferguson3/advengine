@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmeysa4lxdiqr"]
+
+[ext_resource type="Texture2D" uid="uid://cm26c0cv8h3ip" path="res://snatchergore.png" id="1_r0g6x"]
+[ext_resource type="FontFile" uid="uid://b602fdt20pk6" path="res://Ac437_IBM_CGAthin-2y.ttf" id="2_h2fv8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_irpui"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y3np5"]
+texture = ExtResource("1_r0g6x")
+
+[node name="main_scene" type="Node2D"]
+
+[node name="MainGUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 797.0
+offset_bottom = 524.0
+
+[node name="BackgroundColor" type="Panel" parent="MainGUI"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 400.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_irpui")
+
+[node name="ImageContainer" type="PanelContainer" parent="MainGUI"]
+layout_mode = 0
+offset_right = 390.0
+offset_bottom = 241.0
+
+[node name="ImagePanel" type="Panel" parent="MainGUI/ImageContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_y3np5")
+
+[node name="SelectionsContainer" type="VBoxContainer" parent="MainGUI"]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 3.0
+offset_right = 672.0
+offset_bottom = 381.0
+
+[node name="SelectionsLabel" type="RichTextLabel" parent="MainGUI/SelectionsContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_h2fv8")
+theme_override_font_sizes/normal_font_size = 20
+text = "0 Test
+1 Test2
+2
+3
+4
+5
+6
+7
+8
+9 Final test size of font"
+fit_content = true
+
+[node name="DialogueContainer" type="VBoxContainer" parent="MainGUI"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 245.0
+offset_right = 650.0
+offset_bottom = 484.0
+
+[node name="DialogueLabel" type="RichTextLabel" parent="MainGUI/DialogueContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_h2fv8")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "<[color=cyan]METAL GEAR[/color]> \"We're here.\"
+  [color=yellow]COMMAND.[/color] [LOOK] [AROUND]
+<[color=cyan]METAL GEAR[/color]> \"Pretty run down. Don't see anybody around.\"
+  [color=yellow]COMMAND.[/color]"
+fit_content = true
